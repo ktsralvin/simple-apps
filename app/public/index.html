@@ -1,15 +1,287 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Training DevOps</title>
-    <link rel="stylesheet" href="stylesheet/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SB Mleyot — Snack Gurih Pedas</title>
+  <meta name="description" content="Stik Bawang Mleyot: snack gurih pedas favorit untuk momen produktif dan magermu. Pesan varian 40g, 80g, dan 500g!" />
+  <meta name="theme-color" content="#1E40AF" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="SB Mleyot — Snack Gurih Pedas" />
+  <meta property="og:description" content="Stik Bawang Mleyot: snack gurih pedas favorit untuk momen produktif dan magermu." />
+  <meta property="og:image" content="stiker-sb-mleyot-7.png" />
+  <meta property="og:type" content="website" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            mleyotBlue: '#1e3a8a', // blue-800
+            mleyotGold: '#facc15', // yellow-400
+          },
+          fontFamily: {
+            display: ['Inter', 'ui-sans-serif', 'system-ui', 'Arial'],
+            body: ['Inter', 'ui-sans-serif', 'system-ui', 'Arial']
+          },
+          keyframes: {
+            floaty: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-6px)' }
+            }
+          },
+          animation: { floaty: 'floaty 4s ease-in-out infinite' }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* Fallback for older browsers */
+    .gradient-hero { background: radial-gradient(90% 80% at 70% 10%, rgba(250,204,21,.25), transparent 60%), linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);}  
+    .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,0.65); }
+  </style>
 </head>
-<body>
-    <img class="logo" src="./images/idn-logo.png" alt="idn-logo">
-     <h1>Belajar Devops</h1>
-     <h1>update fitur</h1>
+<body class="font-body text-slate-800 antialiased">
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-slate-100">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+      <a href="#home" class="group inline-flex items-center gap-3">
+        <img src="stiker-sb-mleyot-7.png" alt="Logo SB Mleyot" class="w-10 h-10 rounded-full ring-2 ring-mleyotBlue/10 object-contain bg-white" onerror="this.src='logo.png'"/>
+        <div class="leading-tight">
+          <span class="block text-sm tracking-widest text-mleyotBlue font-extrabold">SB MLEYOT</span>
+          <span class="text-xs text-slate-500">Snack Gurih Pedas</span>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="#produk" class="hover:text-mleyotBlue">Produk</a>
+        <a href="#kenapa" class="hover:text-mleyotBlue">Keunggulan</a>
+        <a href="#testi" class="hover:text-mleyotBlue">Testimoni</a>
+        <a href="#faq" class="hover:text-mleyotBlue">FAQ</a>
+        <a href="#order" class="px-3 py-2 rounded-xl bg-mleyotBlue text-white hover:opacity-90">Pesan</a>
+      </div>
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-slate-200">
+        <span class="sr-only">Buka menu</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M3.75 6.75h16.5v1.5H3.75zM3.75 11.25h16.5v1.5H3.75zM3.75 15.75h16.5v1.5H3.75z"/></svg>
+      </button>
+    </nav>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-100 bg-white/95">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 grid gap-2 text-sm">
+        <a href="#produk" class="py-2">Produk</a>
+        <a href="#kenapa" class="py-2">Keunggulan</a>
+        <a href="#testi" class="py-2">Testimoni</a>
+        <a href="#faq" class="py-2">FAQ</a>
+        <a href="#order" class="py-2 px-3 w-fit rounded-xl bg-mleyotBlue text-white">Pesan Sekarang</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="gradient-hero overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-14 pb-20 sm:pt-20 sm:pb-28 grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-mleyotGold/20 text-mleyotBlue mb-4">Baru! Batch segar hari ini</span>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-tight">Stik Bawang <span class="text-mleyotBlue">Mleyot</span></h1>
+        <p class="mt-4 text-lg text-slate-600 max-w-prose">Snack gurih pedas yang bikin nagih. Renyah, wangi bawangnya berasa, dan pedasnya pas — teman setia saat kerja, belajar, atau santai.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a id="order" href="https://wa.me/6281234567890?text=Halo%20SB%20Mleyot!%20Aku%20mau%20pesan%20stik%20bawang." class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-mleyotBlue text-white font-semibold shadow hover:opacity-90">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M20.52 3.48a12 12 0 10-4.63 19.45l2.77.72a1 1 0 001.22-1.23l-.72-2.77A12 12 0 0020.52 3.48zM12 4a8 8 0 014.39 14.76.75.75 0 00-.28.8l.43 1.65-1.65-.43a.75.75 0 00-.8.28A8 8 0 114 12a8 8 0 018-8zm4.47 8.69c-.24-.12-1.43-.71-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.01-.37.1-.49.1-.1.24-.26.36-.39.12-.13.16-.22.24-.36.08-.14.04-.27-.02-.39-.06-.12-.54-1.3-.74-1.78-.19-.46-.39-.4-.54-.4h-.46c-.16 0-.4.06-.61.29-.21.24-.8.78-.8 1.9 0 1.12.82 2.2.94 2.35.12.16 1.61 2.46 3.9 3.35.54.23.96.37 1.29.47.54.17 1.03.14 1.42.08.43-.06 1.43-.58 1.63-1.14.2-.56.2-1.03.14-1.14-.06-.1-.22-.16-.46-.28z"/></svg>
+            Pesan via WhatsApp
+          </a>
+          <a href="#produk" class="inline-flex items-center px-5 py-3 rounded-xl border border-slate-300 font-semibold hover:bg-slate-50">Lihat Varian</a>
+        </div>
+        <p class="mt-4 text-sm text-slate-500">*Gratis stiker untuk 20 pembeli pertama tiap minggu.</p>
+      </div>
+      <div class="relative lg:justify-self-end">
+        <div class="absolute -top-12 -right-8 w-56 h-56 rounded-full bg-mleyotGold/50 blur-3xl"></div>
+        <div class="relative glass rounded-3xl p-6 shadow-xl border border-slate-100">
+          <img src="stiker-sb-mleyot-7.png" alt="Logo Stik Bawang Mleyot" class="w-full max-w-md mx-auto animate-floaty" onerror="this.src='logo.png'">
+        </div>
+        <div class="mt-4 text-center text-slate-500 text-sm">Logo resmi SB Mleyot</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEUNGGULAN -->
+  <section id="kenapa" class="py-16 sm:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl font-extrabold text-slate-900 text-center">Kenapa <span class="text-mleyotBlue">Mleyot</span>?</h2>
+      <p class="mt-3 text-slate-600 text-center max-w-2xl mx-auto">Kami bikin stik bawang dengan resep turun-temurun yang disesuaikan selera kekinian. Renyahnya dapet, pedasnya pas.</p>
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl border border-slate-200 hover:shadow-lg transition">
+          <h3 class="font-bold text-lg">Renyah Maksimal</h3>
+          <p class="mt-2 text-slate-600">Tekstur kriuk yang bikin susah berhenti ngunyah.</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-slate-200 hover:shadow-lg transition">
+          <h3 class="font-bold text-lg">Gurih Pedas Seimbang</h3>
+          <p class="mt-2 text-slate-600">Bumbu bawang khas dengan tingkat kepedasan yang pas.</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-slate-200 hover:shadow-lg transition">
+          <h3 class="font-bold text-lg">Selalu Fresh</h3>
+          <p class="mt-2 text-slate-600">Dimasak harian dengan minyak baru dan bahan pilihan.</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-slate-200 hover:shadow-lg transition">
+          <h3 class="font-bold text-lg">Tanpa Pengawet</h3>
+          <p class="mt-2 text-slate-600">Lebih tenang untuk camilan keluarga.</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-slate-200 hover:shadow-lg transition">
+          <h3 class="font-bold text-lg">Halal</h3>
+          <p class="mt-2 text-slate-600">Proses higienis, insyaAllah aman dan berkah.</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-slate-200 hover:shadow-lg transition">
+          <h3 class="font-bold text-lg">Harga Bersahabat</h3>
+          <p class="mt-2 text-slate-600">Cocok buat jajan harian ataupun hampers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUK -->
+  <section id="produk" class="py-16 sm:py-20 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl font-extrabold text-slate-900 text-center">Varian & Harga</h2>
+      <p class="mt-3 text-slate-600 text-center max-w-2xl mx-auto">Pilih ukuran favoritmu. Untuk pesanan banyak/ritel, hubungi kami untuk harga khusus.</p>
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 40g -->
+        <article class="rounded-2xl bg-white p-6 border border-slate-200 shadow-sm hover:shadow-lg transition">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-bold">Paket Hemat 40g</h3>
+            <span class="text-xs px-2 py-1 rounded-full bg-mleyotGold/30 text-mleyotBlue">Best for Trial</span>
+          </div>
+          <p class="mt-2 text-slate-600">Cocok buat teman kerja/kelas.</p>
+          <div class="mt-4 text-3xl font-extrabold text-mleyotBlue">Rp4.000</div>
+          <a href="https://wa.me/6281234567890?text=Halo%20SB%20Mleyot!%20Pesan%2040g." class="mt-6 inline-flex items-center justify-center w-full px-4 py-3 rounded-xl bg-mleyotBlue text-white font-semibold hover:opacity-90">Pesan 40g</a>
+        </article>
+        <!-- 80g -->
+        <article class="rounded-2xl bg-white p-6 border border-slate-200 shadow-sm hover:shadow-lg transition">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-bold">Paket Mantap 80g</h3>
+            <span class="text-xs px-2 py-1 rounded-full bg-mleyotGold/30 text-mleyotBlue">Favorit!</span>
+          </div>
+          <p class="mt-2 text-slate-600">Pas untuk nemenin nonton/ngerjain tugas.</p>
+          <div class="mt-4 text-3xl font-extrabold text-mleyotBlue">Rp7.000</div>
+          <a href="https://wa.me/6281234567890?text=Halo%20SB%20Mleyot!%20Pesan%2080g." class="mt-6 inline-flex items-center justify-center w-full px-4 py-3 rounded-xl bg-mleyotBlue text-white font-semibold hover:opacity-90">Pesan 80g</a>
+        </article>
+        <!-- 500g -->
+        <article class="rounded-2xl bg-white p-6 border border-slate-200 shadow-sm hover:shadow-lg transition">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-bold">Paket Keluarga 500g</h3>
+            <span class="text-xs px-2 py-1 rounded-full bg-mleyotGold/30 text-mleyotBlue">Hemat</span>
+          </div>
+          <p class="mt-2 text-slate-600">Buat rame-rame atau stok seminggu.</p>
+          <div class="mt-4 text-3xl font-extrabold text-mleyotBlue">Rp35.000</div>
+          <a href="https://wa.me/6281234567890?text=Halo%20SB%20Mleyot!%20Pesan%20500g." class="mt-6 inline-flex items-center justify-center w-full px-4 py-3 rounded-xl bg-mleyotBlue text-white font-semibold hover:opacity-90">Pesan 500g</a>
+        </article>
+      </div>
+      <p class="mt-6 text-xs text-center text-slate-500">Harga dapat berubah sesuai promo & ketersediaan. Tanyakan katalog terbaru ya!</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONI -->
+  <section id="testi" class="py-16 sm:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl font-extrabold text-slate-900 text-center">Apa kata mereka?</h2>
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <figure class="rounded-2xl p-6 border border-slate-200 shadow-sm">
+          <blockquote class="text-slate-700">“Gurih-pedasnya nempel! Cocok nemenin kerja remote.”</blockquote>
+          <figcaption class="mt-4 text-sm text-slate-500">— Vina, Jakarta</figcaption>
+        </figure>
+        <figure class="rounded-2xl p-6 border border-slate-200 shadow-sm">
+          <blockquote class="text-slate-700">“Kriuknya konsisten. Udah repeat order 5x.”</blockquote>
+          <figcaption class="mt-4 text-sm text-slate-500">— Dani, Bandung</figcaption>
+        </figure>
+        <figure class="rounded-2xl p-6 border border-slate-200 shadow-sm">
+          <blockquote class="text-slate-700">“80 gram paling pas. Pedasnya ga lebay.”</blockquote>
+          <figcaption class="mt-4 text-sm text-slate-500">— Sari, Depok</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-16 sm:py-20 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl font-extrabold text-slate-900 text-center">Pertanyaan Umum</h2>
+      <div class="mt-8 divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white overflow-hidden">
+        <details class="group p-6">
+          <summary class="cursor-pointer list-none font-semibold flex items-center justify-between">Tingkat pedasnya gimana?
+            <span class="transition group-open:rotate-180">▾</span>
+          </summary>
+          <p class="mt-2 text-slate-600">Standar pedas Indonesia: nikmat, tapi tidak menyiksa. Bisa request level pedas saat order.</p>
+        </details>
+        <details class="group p-6">
+          <summary class="cursor-pointer list-none font-semibold flex items-center justify-between">Pengiriman ke mana saja?
+            <span class="transition group-open:rotate-180">▾</span>
+          </summary>
+          <p class="mt-2 text-slate-600">Kirim seluruh Indonesia via kurir instan/expedisi. Lokal (Jadetabek/daerahmu) bisa same day.</p>
+        </details>
+        <details class="group p-6">
+          <summary class="cursor-pointer list-none font-semibold flex items-center justify-between">Ketahanan produk?
+            <span class="transition group-open:rotate-180">▾</span>
+          </summary>
+          <p class="mt-2 text-slate-600">Simpan di tempat sejuk & kering. Disarankan habis dalam 2–3 minggu untuk rasa terbaik.</p>
+        </details>
+      </div>
+      <div class="text-center mt-8">
+        <a href="https://wa.me/6281234567890?text=Halo%20SB%20Mleyot!%20Mau%20tanya%20produk." class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-mleyotBlue text-white font-semibold shadow hover:opacity-90">Tanya via WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA ORDER -->
+  <section class="py-16 sm:py-20 bg-gradient-to-br from-mleyotBlue to-blue-600 text-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-3xl sm:text-4xl font-extrabold">Siap #NgemilMleyot?</h2>
+      <p class="mt-3 text-white/90">Klik tombol di bawah ini, kami proses secepatnya.</p>
+      <a href="https://wa.me/6281234567890?text=Halo%20SB%20Mleyot!%20Aku%20mau%20pesan." class="mt-6 inline-flex items-center gap-2 px-6 py-4 rounded-2xl bg-white text-mleyotBlue font-bold shadow hover:opacity-90">Pesan Sekarang</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img src="stiker-sb-mleyot-7.png" alt="Logo SB Mleyot" class="w-8 h-8 rounded-full ring-2 ring-mleyotBlue/10 bg-white object-contain" onerror="this.src='logo.png'"/>
+        <div>
+          <p class="font-semibold">SB Mleyot</p>
+          <p class="text-xs text-slate-500">Snack Gurih Pedas</p>
+        </div>
+      </div>
+      <p class="text-sm text-slate-500">© <span id="year"></span> SB Mleyot. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // mobile menu toggle
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn?.addEventListener('click', () => menu.classList.toggle('hidden'));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Structured Data: Product -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Stik Bawang Mleyot",
+    "image": ["stiker-sb-mleyot-7.png"],
+    "description": "Snack stik bawang gurih pedas dalam kemasan 40g, 80g, dan 500g.",
+    "brand": {"@type": "Brand", "name": "SB Mleyot"},
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "IDR",
+      "lowPrice": "4000",
+      "highPrice": "35000",
+      "offerCount": "3"
+    }
+  }
+  </script>
 </body>
 </html>
